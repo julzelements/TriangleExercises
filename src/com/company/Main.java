@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	System.out.println("Hello World");
+        DrawLine drawLine = new DrawLine();
         UserInput input = new UserInput();
         String userInput = input.getUserInput(
                 "Would you like to: \n" +
@@ -15,14 +16,11 @@ public class Main {
         switch (userInput.charAt(0)) {
             case 'a': userInputCharacter = "*";
                 break;
-            case 'h': userInputCharacter = "Horizontal";
-                HorizontalLine horizontalLine = new HorizontalLine();
-                horizontalLine.getIntegerFromUser();
+            case 'h': drawLine.drawHorizontalLine();
                 break;
-            case 'v': userInputCharacter = "vertical";
+            case 'v': drawLine.drawVerticalLine();
                 break;
             default: userInputCharacter = "Invalid selection";
         }
-        System.out.println(userInputCharacter);
     }
 }
