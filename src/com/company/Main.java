@@ -22,7 +22,7 @@ public class Main {
                 break;
             case 't': plotter.drawTriangle();
                 break;
-            default: userInputCharacter = "Invalid selection";
+            default: System.out.println("Invalid selection");
         }
     }
 }
