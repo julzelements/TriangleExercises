@@ -10,7 +10,8 @@ public class Main {
                 "Would you like to: \n" +
                 "print an astrix?           type: 'a' \n" +
                 "print a horizontal line?   type: 'h' \n" +
-                "print a vertical line?     type: 'v'  ");
+                "print a vertical line?     type: 'v'  \n" +
+                "print a triangle?          type: 't'");
 
         String userInputCharacter;
         switch (userInput.charAt(0)) {
@@ -19,6 +20,8 @@ public class Main {
             case 'h': drawLine.drawHorizontalLine();
                 break;
             case 'v': drawLine.drawVerticalLine();
+                break;
+            case 't': drawLine.drawTriangle();
                 break;
             default: userInputCharacter = "Invalid selection";
         }
