@@ -3,7 +3,7 @@ package com.company;
 /**
  * Created by julz on 2/08/2016.
  */
-public class DrawLine {
+public class Plotter {
     public void drawHorizontalLine(){
         int lineLength = getIntegerFromUser();
         String line = createHorizontalLine(lineLength);

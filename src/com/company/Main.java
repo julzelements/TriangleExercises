@@ -3,8 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	System.out.println("Hello World");
-        DrawLine drawLine = new DrawLine();
+        Plotter plotter = new Plotter();
         UserInput input = new UserInput();
         String userInput = input.getUserInput(
                 "Would you like to: \n" +
@@ -15,13 +14,13 @@ public class Main {
 
         String userInputCharacter;
         switch (userInput.charAt(0)) {
-            case 'a': userInputCharacter = "*";
+            case 'a': System.out.println("*");
                 break;
-            case 'h': drawLine.drawHorizontalLine();
+            case 'h': plotter.drawHorizontalLine();
                 break;
-            case 'v': drawLine.drawVerticalLine();
+            case 'v': plotter.drawVerticalLine();
                 break;
-            case 't': drawLine.drawTriangle();
+            case 't': plotter.drawTriangle();
                 break;
             default: userInputCharacter = "Invalid selection";
         }
