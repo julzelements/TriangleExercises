@@ -5,22 +5,22 @@ public class Main {
     public static void main(String[] args) {
 	System.out.println("Hello World");
         UserInput input = new UserInput();
-        String name = input.getUserInput(
+        String userInput = input.getUserInput(
                 "Would you like to: \n" +
                 "print an astrix?           type: 'a' \n" +
                 "print a horizontal line?   type: 'h' \n" +
                 "print a vertical line?     type: 'v'  ");
 
-        String userChoice;
-        switch (name.charAt(0)) {
-            case 'a': userChoice = "*";
+        String userInputCharacter;
+        switch (userInput.charAt(0)) {
+            case 'a': userInputCharacter = "*";
                 break;
-            case 'h': userChoice = "Horizontal";
+            case 'h': userInputCharacter = "Horizontal";
                 break;
-            case 'v': userChoice = "vertical";
+            case 'v': userInputCharacter = "vertical";
                 break;
-            default: userChoice = "Invalid selection";
+            default: userInputCharacter = "Invalid selection";
         }
-        System.out.println(userChoice);
+        System.out.println(userInputCharacter);
     }
 }
