@@ -4,6 +4,11 @@ package com.company;
  * Created by julz on 2/08/2016.
  */
 public class Plotter {
+
+    public void drawAstrix(){
+        System.out.println("*");
+    }
+
     public void drawHorizontalLine(){
         int lineLength = getIntegerFromUser();
         String line = createHorizontalLine(lineLength);

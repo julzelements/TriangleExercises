@@ -14,7 +14,7 @@ public class Main {
 
         String userInputCharacter;
         switch (userInput.charAt(0)) {
-            case 'a': System.out.println("*");
+            case 'a': plotter.drawAstrix();
                 break;
             case 'h': plotter.drawHorizontalLine();
                 break;
