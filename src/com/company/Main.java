@@ -16,6 +16,8 @@ public class Main {
             case 'a': userInputCharacter = "*";
                 break;
             case 'h': userInputCharacter = "Horizontal";
+                HorizontalLine horizontalLine = new HorizontalLine();
+                horizontalLine.getIntegerFromUser();
                 break;
             case 'v': userInputCharacter = "vertical";
                 break;
