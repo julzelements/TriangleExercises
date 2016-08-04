@@ -16,13 +16,13 @@ public class Main {
         String result = new String();
 
         switch (userInput.charAt(0)) {
-            case 'a': plotter.drawAstrix();
+            case 'a': result = plotter.createAstrix();
                 break;
             case 'h': result = plotter.createHorizontalLine(n);
                 break;
-            case 'v': plotter.drawVerticalLine();
+            case 'v': result = plotter.createVerticalLine(n);
                 break;
-            case 't': plotter.drawTriangle();
+            case 't': result = plotter.createRightTriangle(n);
                 break;
             default: System.out.println("Invalid selection");
         }

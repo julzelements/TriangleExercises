@@ -5,28 +5,11 @@ package com.company;
  */
 public class Plotter {
 
-    public String drawAstrix(){
-        System.out.println("*");
-        return null;
+    public String createAstrix(){
+        return "*";
     }
 
-    public void drawHorizontalLine(){
-        int lineLength = getIntegerFromUser();
-        String line = createHorizontalLine(lineLength);
-        System.out.println(line);
-    }
 
-    public void drawVerticalLine(){
-        int lineLength = getIntegerFromUser();
-        String line = createVerticalLine(lineLength);
-        System.out.println(line);
-    }
-
-    public void drawTriangle(){
-        int n = getIntegerFromUser();
-        String line = createRightTriangle(n);
-        System.out.println(line);
-    }
 
     private int getIntegerFromUser() {
         UserInput userInput = new UserInput();
@@ -51,7 +34,7 @@ public class Plotter {
         return line;
     }
 
-    private String createVerticalLine(int lengthOfLine) {
+    public String createVerticalLine(int lengthOfLine) {
         String line = new String();
         for(int i=1; i<=lengthOfLine; i++){
             line = line + "*\n";
@@ -59,11 +42,11 @@ public class Plotter {
         return line;
     }
 
-    private String createRightTriangle(int n) {
-        String triangle = new String();
+    public String createRightTriangle(int n) {
+        String triangle = "*";
 
-        for(int i = 1; i<= n; i++) {
-            String line = new String();
+        for(int i = 1; i< n; i++) {
+            String line = "*";
             for(int j = 1; j<=i; j++){
                 line = line + "*";
             }
@@ -71,4 +54,30 @@ public class Plotter {
         }
         return triangle;
     }
+
+    public String createIsoscelesTriangle(int n) {
+        //First Row is done manually
+        String triangle = (n - 1) + "*" + (n - 1);
+        for(int i = 1; i < n; i++){
+                int spaces = (n - (i + 1));
+                int astrixs = i;
+            String s = concatenate(" ", spaces);
+            String a = concatenate("*", astrixs);
+            triangle = triangle + "\n" + s + a + "*" + a + s;
+
+            System.out.println("i:" + i + ", s:" + spaces + ", a:" + astrixs);
+
+
+            }
+        return triangle;
+    }
+
+    public String concatenate(String argument, int n){
+        String result = new String();
+        for(int i = 1; i < n; i++){
+            result = result + argument;
+        }
+        return result;
+    }
+
 }

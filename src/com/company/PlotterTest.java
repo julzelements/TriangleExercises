@@ -1,10 +1,11 @@
 package com.company;
 
 import org.junit.After;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+
 
 /**
  * Created by julz on 4/08/2016.
@@ -24,23 +25,43 @@ public class PlotterTest {
 
     @Test
     public void drawAstrix() throws Exception {
-    plotter.drawAstrix();
+    plotter.createAstrix();
     }
 
     @Test
     public void drawHorizontalLine() throws Exception {
-
+        String fiveStars =  plotter.createHorizontalLine(5);
+        assertEquals("*****", fiveStars);
 
     }
 
     @Test
     public void drawVerticalLine() throws Exception {
+        String fiveStars = plotter.createVerticalLine(5);
+        String fiveStarsTest = "*\n" + "*\n" +"*\n" +"*\n" +"*\n";
+        assertEquals(fiveStars, fiveStarsTest);
 
     }
 
     @Test
     public void drawTriangle() throws Exception {
+        String fiveSidedTriangle = plotter.createRightTriangle(5);
+        String fiveSidedTriangleTest = "*\n" + "**\n" + "***\n" + "****\n" + "*****";
+        assertEquals(fiveSidedTriangleTest, fiveSidedTriangle);
+    }
 
+    @Test
+    public void concatenate() throws Exception {
+        String fiveStars = "*****";
+        String fiveStarsTest = plotter.concatenate("*", 5);
+        assertEquals(fiveStars, fiveStarsTest);
+    }
+
+    @Test
+    public void drawIsoscelesTriangle() throws Exception {
+        String fiveTallIsoscelesTriangle = plotter.createIsoscelesTriangle(5);
+        String fiveTallIsoscelesTriangleTest = "    *    \n" + "   ***   \n" + "  *****  \n" + " ******* \n" + "*********";
+        assertEquals(fiveTallIsoscelesTriangleTest,fiveTallIsoscelesTriangle);
     }
 
 }
