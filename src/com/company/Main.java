@@ -13,11 +13,9 @@ public class Main {
                 "print a right angle triangle?          type: 'r'\n" +
                 "print an isosceles triangle?           type: 'i'\n");
 
-
-
         String result = new String();
 
-        if (userInput == "a") {
+        if (userInput.equals("a")) {
             //We need no further user input
             System.out.println(plotter.createAstrix());
 
