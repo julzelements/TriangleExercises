@@ -68,4 +68,11 @@ public class PlotterTest {
         assertEquals(fiveTallIsoscelesTriangleTest,fiveTallIsoscelesTriangle);
     }
 
+//    @Test
+//    public void drawDiamond() throws Exception {
+//        String fiveTallIsoscelesTriangle = plotter.createDiamond(5);
+//        String fiveTallIsoscelesTriangleTest = "    *    \n" + "   ***   \n" + "  *****  \n" + " ******* \n" + "*********\n" + " ******* \n" + "    *    \n" + "   ***   \n" + "  *****  \n" +  ;
+//        assertEquals(fiveTallIsoscelesTriangleTest,fiveTallIsoscelesTriangle);
+//    }
+
 }

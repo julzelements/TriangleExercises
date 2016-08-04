@@ -75,6 +75,10 @@ public class Plotter {
         return newRow;
     }
 
+    public String getRowWithNewline(int spaces, int astrixs) {
+       return "\n" + getIsoscelesTriangleRow(spaces, astrixs);
+    }
+
     public String concatenate(String argument, int n){
         String result = new String();
         for(int i = 0; i < n; i++){
