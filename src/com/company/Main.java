@@ -12,11 +12,13 @@ public class Main {
                 "print a vertical line?     type: 'v'  \n" +
                 "print a triangle?          type: 't'");
 
-        String userInputCharacter;
+        Integer n = getIntegerFromUser();
+        String result = new String();
+
         switch (userInput.charAt(0)) {
             case 'a': plotter.drawAstrix();
                 break;
-            case 'h': plotter.drawHorizontalLine();
+            case 'h': result = plotter.createHorizontalLine(n);
                 break;
             case 'v': plotter.drawVerticalLine();
                 break;
@@ -24,5 +26,21 @@ public class Main {
                 break;
             default: System.out.println("Invalid selection");
         }
+        System.out.println(result);
+    }
+
+    private static int getIntegerFromUser() {
+        UserInput userInput = new UserInput();
+        int lengthInteger = 0;
+        String lengthString = userInput.getUserInput("How long a line should I draw? \n" +
+                "Input nonzero integer:");
+
+        try {
+            lengthInteger =  Integer.parseInt(lengthString);
+        } catch (NumberFormatException ex)  {
+            System.out.println("Not a valid integer");
+        }
+
+        return lengthInteger;
     }
 }

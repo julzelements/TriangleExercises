@@ -43,7 +43,7 @@ public class Plotter {
         return lengthInteger;
     }
 
-    private String createHorizontalLine(int lengthOfLine) {
+    public String createHorizontalLine(int lengthOfLine) {
         String line = new String();
         for(int i=1; i<=lengthOfLine; i++){
             line = line + "*";
