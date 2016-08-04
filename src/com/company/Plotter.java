@@ -57,19 +57,22 @@ public class Plotter {
 
     public String createIsoscelesTriangle(int n) {
         //First Row is done manually
-        String triangle = (n - 1) + "*" + (n - 1);
+        String triangle = getIsoscelesTriangleRow((n - 1) , 0);
+
         for(int i = 1; i < n; i++){
                 int spaces = (n - (i + 1));
                 int astrixs = i;
-            String s = concatenate(" ", spaces);
-            String a = concatenate("*", astrixs);
-            triangle = triangle + "\n" + s + a + "*" + a + s;
-
-            System.out.println("i:" + i + ", s:" + spaces + ", a:" + astrixs);
-
-
+            String newRow = getIsoscelesTriangleRow(spaces, astrixs);
+            triangle = triangle + "\n" + newRow;
             }
         return triangle;
+    }
+
+    public String getIsoscelesTriangleRow(int spaces, int astrixs) {
+        String s = concatenate(" ", spaces);
+        String a = concatenate("*", astrixs);
+        String newRow = s + a + "*" + a + s;
+        return newRow;
     }
 
     public String concatenate(String argument, int n){
