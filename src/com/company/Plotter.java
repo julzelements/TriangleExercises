@@ -74,7 +74,7 @@ public class Plotter {
 
     public String concatenate(String argument, int n){
         String result = new String();
-        for(int i = 1; i < n; i++){
+        for(int i = 0; i < n; i++){
             result = result + argument;
         }
         return result;

@@ -55,6 +55,10 @@ public class PlotterTest {
         String fiveStars = "*****";
         String fiveStarsTest = plotter.concatenate("*", 5);
         assertEquals(fiveStars, fiveStarsTest);
+
+        String emptyString = "";
+        String emptyStringTest = plotter.concatenate("*", 0);
+        assertEquals(emptyString, emptyStringTest);
     }
 
     @Test
