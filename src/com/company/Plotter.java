@@ -5,8 +5,9 @@ package com.company;
  */
 public class Plotter {
 
-    public void drawAstrix(){
+    public String drawAstrix(){
         System.out.println("*");
+        return null;
     }
 
     public void drawHorizontalLine(){
