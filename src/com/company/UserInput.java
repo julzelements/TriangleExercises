@@ -7,7 +7,7 @@ import java.io.*;
 public class UserInput {
 
 
-    public String getUserInput(String prompt) {
+    public String getString(String prompt) {
         String inputLine = null;
         System.out.print(prompt + " ");
         try {
@@ -18,6 +18,20 @@ public class UserInput {
             System.out.println("IOException: " + e);
         }
         return inputLine;
+    }
+
+    public int getInteger() {
+        
+        int lengthInteger = 0;
+        String lengthString = getString("Please input nonzero integer:");
+
+        try {
+            lengthInteger =  Integer.parseInt(lengthString);
+        } catch (NumberFormatException ex)  {
+            System.out.println("Not a valid integer");
+        }
+
+        return lengthInteger;
     }
 }
 

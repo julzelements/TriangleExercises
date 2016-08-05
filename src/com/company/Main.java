@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Plotter plotter = new Plotter();
         UserInput input = new UserInput();
-        String userInput = input.getUserInput(
+        String userInput = input.getString(
                 "Would you like to: \n" +
                 "print an astrix?                       type: 'a'\n" +
                 "print a horizontal line?               type: 'h'\n" +
@@ -21,7 +21,7 @@ public class Main {
 
         } else {
             //We need a number from the user to size the output
-            Integer n = getIntegerFromUser();
+            Integer n = input.getInteger();
 
             switch (userInput.charAt(0)) {
                 case 'h':
@@ -43,17 +43,5 @@ public class Main {
         }
     }
 
-    private static int getIntegerFromUser() {
-        UserInput userInput = new UserInput();
-        int lengthInteger = 0;
-        String lengthString = userInput.getUserInput("Please input nonzero integer:");
 
-        try {
-            lengthInteger =  Integer.parseInt(lengthString);
-        } catch (NumberFormatException ex)  {
-            System.out.println("Not a valid integer");
-        }
-
-        return lengthInteger;
-    }
 }
