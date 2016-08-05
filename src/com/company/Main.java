@@ -13,7 +13,7 @@ public class Main {
                 "print a right angle triangle?          type: 'r'\n" +
                 "print an isosceles triangle?           type: 'i'\n");
 
-        String result = new String();
+        String result = "";
 
         if (userInput.equals("a")) {
             //We need no further user input

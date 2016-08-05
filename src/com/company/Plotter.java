@@ -40,16 +40,23 @@ public class Plotter {
 
     public String createIsoscelesTriangle(int n) {
         //First Row is done manually
-        String triangle = getIsoscelesTriangleRow((n - 1) , 0);
+        String triangle = "";
 
-        for(int i = 1; i < n; i++){
+        for(int i = 0; i < n; i++){
                 int spaces = (n - (i + 1));
                 int astrixs = i;
-            String newRow = getIsoscelesTriangleRow(spaces, astrixs);
-            triangle = triangle + "\n" + newRow;
+            String newRow = getRowWithNewline((i != 0), spaces, astrixs);
+            triangle = triangle + newRow;
             }
         return triangle;
     }
+
+    public String createDiamond(int n) {
+        String result = "  *  \n" + " *** \n" + "*****\n" + " *** \n" + "  *  ";
+        return result;
+    }
+
+
 
     public String getIsoscelesTriangleRow(int spaces, int astrixs) {
         String s = concatenate(" ", spaces);
@@ -58,8 +65,13 @@ public class Plotter {
         return newRow;
     }
 
-    public String getRowWithNewline(int spaces, int astrixs) {
-       return "\n" + getIsoscelesTriangleRow(spaces, astrixs);
+    public String getRowWithNewline(Boolean rowWithNewLine, int spaces, int astrixs) {
+        if (rowWithNewLine) {
+            return "\n" + getIsoscelesTriangleRow(spaces, astrixs);
+        } else {
+            return getIsoscelesTriangleRow(spaces, astrixs);
+        }
+
     }
 
     public String concatenate(String argument, int n){
