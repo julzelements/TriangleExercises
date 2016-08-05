@@ -70,7 +70,7 @@ public class PlotterTest {
 
     @Test
     public void drawDiamond() throws Exception {
-        String threeTallDiamond = plotter.createDiamond(5);
+        String threeTallDiamond = plotter.createDiamond(3);
         String threeTallDiamondTest = "  *  \n" + " *** \n" + "*****\n" + " *** \n" + "  *  ";
         assertEquals(threeTallDiamond, threeTallDiamondTest);
     }

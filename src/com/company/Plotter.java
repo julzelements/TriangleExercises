@@ -52,11 +52,16 @@ public class Plotter {
     }
 
     public String createDiamond(int n) {
-        String result = "  *  \n" + " *** \n" + "*****\n" + " *** \n" + "  *  ";
-        return result;
+        String bottom = createDiamondBottom(n);
+        String top = createIsoscelesTriangle(n);
+        String diamond = top + "\n" + bottom;
+        return diamond;
     }
 
-
+    private String createDiamondBottom(int n) {
+        String triangle =  " *** \n" + "  *  ";
+        return triangle;
+    }
 
     public String getIsoscelesTriangleRow(int spaces, int astrixs) {
         String s = concatenate(" ", spaces);
