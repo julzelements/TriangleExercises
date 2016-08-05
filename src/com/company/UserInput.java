@@ -33,5 +33,10 @@ public class UserInput {
 
         return lengthInteger;
     }
+
+    public String getUserName() {
+        String userName = getString("What is your name?");
+        return userName;
+    }
 }
 

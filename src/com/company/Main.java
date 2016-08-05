@@ -11,7 +11,8 @@ public class Main {
                 "print a horizontal line?               type: 'h'\n" +
                 "print a vertical line?                 type: 'v'\n" +
                 "print a right angle triangle?          type: 'r'\n" +
-                "print an isosceles triangle?           type: 'i'\n");
+                "print an isosceles triangle?           type: 'i'\n" +
+                "print a right angle triangle?          type: 'd'");
 
         String result = "";
 
@@ -36,6 +37,14 @@ public class Main {
                 case 'i':
                     result = plotter.createIsoscelesTriangle(n);
                     break;
+                case 'd':
+                    result = plotter.createDiamond(n);
+                    break;
+                case 'n':
+                    String userName = input.getUserName();
+                    result = plotter.createDiamondName(n, userName);
+                    break;
+
                 default:
                     System.out.println("Invalid selection");
             }

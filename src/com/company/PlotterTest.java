@@ -75,4 +75,10 @@ public class PlotterTest {
         assertEquals(threeTallDiamond, threeTallDiamondTest);
     }
 
+    @Test
+    public void drawDiamondName() throws Exception {
+        String threeTallDiamondName = plotter.createDiamondName(3, "Julian");
+        String threeTallDiamondTestName = "  *  \n" + " *** \n" + "*****\n" + " *** \n" + "  *  ";
+        assertEquals(threeTallDiamond, threeTallDiamondTest);
+    }
 }

@@ -1,5 +1,12 @@
 package com.company;
 
+
+
+
+import java.util.LinkedList;
+import java.util.List;
+
+
 /**
  * Created by julz on 2/08/2016.
  */
@@ -54,20 +61,28 @@ public class Plotter {
     public String createDiamond(int n) {
         String bottom = createDiamondBottom(n);
         String top = createIsoscelesTriangle(n);
-        String diamond = top + "\n" + bottom;
-        return diamond;
+        return top + "\n" + bottom;
+
     }
 
     private String createDiamondBottom(int n) {
-        String triangle =  " *** \n" + "  *  ";
-        return triangle;
+        String topTriangle = createIsoscelesTriangle(n);
+        String[] parts = topTriangle.split("\n");
+
+        List<String> triangleList = new LinkedList<String>();
+        for (int i = (parts.length - 2); i >= 0; i--) {
+            triangleList.add(parts[i]);
+        }
+
+        String[] triangleArray = triangleList.toArray(new String[triangleList.size()]);
+        return strJoin(triangleArray, "\n");
     }
+
 
     public String getIsoscelesTriangleRow(int spaces, int astrixs) {
         String s = concatenate(" ", spaces);
         String a = concatenate("*", astrixs);
-        String newRow = s + a + "*" + a + s;
-        return newRow;
+        return s + a + "*" + a + s;
     }
 
     public String getRowWithNewline(Boolean rowWithNewLine, int spaces, int astrixs) {
@@ -86,5 +101,18 @@ public class Plotter {
         }
         return result;
     }
+
+    private static String strJoin(String[] aArr, String sSep) {
+        //Got this method from Stack overflow
+        //http://stackoverflow.com/questions/1978933/a-quick-and-easy-way-to-join-array-elements-with-a-separator-the-opposite-of-sp
+        StringBuilder sbStr = new StringBuilder();
+        for (int i = 0, il = aArr.length; i < il; i++) {
+            if (i > 0)
+                sbStr.append(sSep);
+            sbStr.append(aArr[i]);
+        }
+        return sbStr.toString();
+    }
+
 
 }
