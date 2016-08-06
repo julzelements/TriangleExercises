@@ -43,7 +43,7 @@ public class Main {
                     break;
                 case 'n':
                     String userName = input.getUserName();
-//                    result = plotter.createDiamondName(n, userName);
+                    result = plotter.createDiamondName(n, userName);
                     break;
 
                 default:
