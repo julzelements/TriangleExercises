@@ -12,7 +12,8 @@ public class Main {
                 "print a vertical line?                 type: 'v'\n" +
                 "print a right angle triangle?          type: 'r'\n" +
                 "print an isosceles triangle?           type: 'i'\n" +
-                "print a right angle triangle?          type: 'd'");
+                "print a diamond?                       type: 'd'\n" +
+                "print a diamond with your name?        type: 'n'");
 
         String result = "";
 
@@ -42,7 +43,7 @@ public class Main {
                     break;
                 case 'n':
                     String userName = input.getUserName();
-                    result = plotter.createDiamondName(n, userName);
+//                    result = plotter.createDiamondName(n, userName);
                     break;
 
                 default:

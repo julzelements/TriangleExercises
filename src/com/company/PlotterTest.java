@@ -78,7 +78,14 @@ public class PlotterTest {
     @Test
     public void drawDiamondName() throws Exception {
         String threeTallDiamondName = plotter.createDiamondName(3, "Julian");
-        String threeTallDiamondTestName = "  *  \n" + " *** \n" + "*****\n" + " *** \n" + "  *  ";
-        assertEquals(threeTallDiamond, threeTallDiamondTest);
+        String threeTallDiamondNameTest = "  *  \n" + " *** \n" + "Julian\n" + " *** \n" + "  *  ";
+        assertEquals(threeTallDiamondName, threeTallDiamondNameTest);
     }
+
+    @Test
+    public void invertLines() throws Exception {
+        String result = plotter.invertStringsWithSeparator("    *    \n" + "   ***   \n" + "  *****  \n" + " ******* \n" + "*********", "\n");
+        System.out.println(result);
+    }
+
 }

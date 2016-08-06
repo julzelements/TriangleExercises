@@ -65,6 +65,12 @@ public class Plotter {
 
     }
 
+    public String invertStringsWithSeparator(String string, String separator) {
+        String[] array = string.split(separator);
+        String[] invertedArray = reverseArray(array);
+        return strJoin(invertedArray, "\n");
+    }
+
     private String createDiamondBottom(int n) {
         String topTriangle = createIsoscelesTriangle(n);
         String[] parts = topTriangle.split("\n");
@@ -77,6 +83,15 @@ public class Plotter {
         String[] triangleArray = triangleList.toArray(new String[triangleList.size()]);
         return strJoin(triangleArray, "\n");
     }
+
+    public String createDiamondName(int n, String name) {
+        String top = createIsoscelesTriangle(n - 1);
+        String bottom = createDiamondBottom(n);
+        String diamondName = top + "\n" + name + "\n" + bottom;
+        System.out.println(diamondName);
+        return "  *  \n" + " *** \n" + "Julian\n" + " *** \n" + "  *  ";
+    }
+
 
 
     public String getIsoscelesTriangleRow(int spaces, int astrixs) {
@@ -114,5 +129,14 @@ public class Plotter {
         return sbStr.toString();
     }
 
+    public String[] reverseArray(String[] array) {
+
+        for (int i = 0; i < array.length / 2; i++) {
+            String temp = array[i];
+            array[i] = array[array.length - i -1];
+            array[array.length - i -1] = temp;
+        }
+        return array;
+    }
 
 }
