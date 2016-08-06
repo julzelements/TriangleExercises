@@ -53,11 +53,11 @@ public class PlotterTest {
     @Test
     public void concatenate() throws Exception {
         String fiveStars = "*****";
-        String fiveStarsTest = plotter.concatenate("*", 5);
+        String fiveStarsTest = plotter.generateCharacters("*", 5);
         assertEquals(fiveStars, fiveStarsTest);
 
         String emptyString = "";
-        String emptyStringTest = plotter.concatenate("*", 0);
+        String emptyStringTest = plotter.generateCharacters("*", 0);
         assertEquals(emptyString, emptyStringTest);
     }
 
@@ -80,6 +80,13 @@ public class PlotterTest {
         String threeTallDiamondName = plotter.createDiamondName(3, "Julian");
         String threeTallDiamondNameTest = "  *  \n" + " *** \n" + "Julian\n" + " *** \n" + "  *  ";
         assertEquals(threeTallDiamondName, threeTallDiamondNameTest);
+    }
+
+    @Test
+    public void drawFizzBuzz() throws Exception {
+        String fizzBuzz = plotter.fizzBuzz(15);
+        String fizzBuzzTest = "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n";
+        assertEquals(fizzBuzz, fizzBuzzTest);
     }
 
 }

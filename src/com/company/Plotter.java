@@ -3,6 +3,7 @@ package com.company;
 
 
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -93,8 +94,8 @@ public class Plotter {
 
 
     public String getIsoscelesTriangleRow(int spaces, int astrixs) {
-        String s = concatenate(" ", spaces);
-        String a = concatenate("*", astrixs);
+        String s = generateCharacters(" ", spaces);
+        String a = generateCharacters("*", astrixs);
         return s + a + "*" + a + s;
     }
 
@@ -107,7 +108,7 @@ public class Plotter {
 
     }
 
-    public String concatenate(String argument, int n){
+    public String generateCharacters(String argument, int n){
         String result = new String();
         for(int i = 0; i < n; i++){
             result = result + argument;
@@ -135,6 +136,36 @@ public class Plotter {
             array[array.length - i -1] = temp;
         }
         return array;
+    }
+
+    public String fizzBuzz(int n) {
+        ArrayList<String> result = new ArrayList<String>();
+        for (int i = 1; i <= n; i++) {
+            int fizzTest = i%3;
+            int buzzTest = i%5;
+            int fizzBuzzTest = fizzTest + buzzTest;
+
+            if (fizzBuzzTest == 0) {
+                result.add("FizzBuzz");
+            } else if (fizzTest == 0) {
+                result.add("Fizz");
+            } else if (buzzTest == 0) {
+                result.add("Buzz");
+            } else {
+                result.add(Integer.toString(i));
+            }
+
+        }
+        return arrayListToString(result, "\n");
+    }
+
+    private String arrayListToString(ArrayList<String> list, String delimiter){
+        String listString = "";
+        for (String s : list)
+        {
+            listString += s + delimiter;
+        }
+        return listString;
     }
 
 }

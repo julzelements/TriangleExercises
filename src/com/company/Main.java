@@ -13,7 +13,9 @@ public class Main {
                 "print a right angle triangle?          type: 'r'\n" +
                 "print an isosceles triangle?           type: 'i'\n" +
                 "print a diamond?                       type: 'd'\n" +
-                "print a diamond with your name?        type: 'n'");
+                "print a diamond with your name?        type: 'n'\n" +
+                "Do the FizzBuzz?                       type: 'b'\n" +
+                "Print some Prime Factors?              type: 'p'");
 
         String result = "";
 
@@ -42,8 +44,15 @@ public class Main {
                     result = plotter.createDiamond(n);
                     break;
                 case 'n':
+                    //We need the user's name
                     String userName = input.getUserName();
                     result = plotter.createDiamondName(n, userName);
+                    break;
+                case 'b':
+                    result = plotter.createDiamond(n);
+                    break;
+                case 'p':
+                    result = plotter.createDiamond(n);
                     break;
 
                 default:
