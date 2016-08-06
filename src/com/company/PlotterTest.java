@@ -82,10 +82,4 @@ public class PlotterTest {
         assertEquals(threeTallDiamondName, threeTallDiamondNameTest);
     }
 
-    @Test
-    public void invertLines() throws Exception {
-        String result = plotter.invertStringsWithSeparator("    *    \n" + "   ***   \n" + "  *****  \n" + " ******* \n" + "*********", "\n");
-        System.out.println(result);
-    }
-
 }

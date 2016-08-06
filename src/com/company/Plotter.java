@@ -85,11 +85,9 @@ public class Plotter {
     }
 
     public String createDiamondName(int n, String name) {
-        String top = createIsoscelesTriangle(n - 1);
+        String top = invertStringsWithSeparator(createDiamondBottom(n),"\n");
         String bottom = createDiamondBottom(n);
-        String diamondName = top + "\n" + name + "\n" + bottom;
-        System.out.println(diamondName);
-        return "  *  \n" + " *** \n" + "Julian\n" + " *** \n" + "  *  ";
+        return top + "\n" + name + "\n" + bottom;
     }
 
 
