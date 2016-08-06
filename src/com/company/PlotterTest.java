@@ -108,4 +108,12 @@ public class PlotterTest {
         fourteenPrime.add(7);
         assertEquals(plotter.generate(14), fourteenPrime);
     }
+
+    @Test
+    public void testEightSixtyFour() throws Exception {
+        ArrayList<Integer> eightSixtyFourPrime = new ArrayList<Integer>();
+        eightSixtyFourPrime.add(2);
+        eightSixtyFourPrime.add(3);
+        assertEquals(plotter.generate(864), eightSixtyFourPrime);
+    }
 }

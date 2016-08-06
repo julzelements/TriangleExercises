@@ -52,7 +52,7 @@ public class Main {
                     result = plotter.fizzBuzz(n);
                     break;
                 case 'p':
-                    result = plotter.createDiamond(n);
+                    result = plotter.getPrimes(n);
                     break;
 
                 default:

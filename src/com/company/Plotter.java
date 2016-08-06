@@ -168,9 +168,11 @@ public class Plotter {
         return listString;
     }
 
-//    public ArrayList<Integer> getPrimes(int n){
-//
-//    }
+    public String getPrimes(int n) {
+        ArrayList<Integer> primesList = generate(n);
+        return primesList.toString();
+
+    }
 
     public ArrayList<Integer> generate(int n) {
 
@@ -182,13 +184,17 @@ public class Plotter {
             Double newResult = result / divisor;
             Double remainder = newResult%1.0;
 
-            if (remainder == 0) {
+            Boolean divisorIsNotInPrimesList = !(primesList.contains(divisor.intValue()));
+            Boolean thereIsNoRemainder = remainder == 0;
+
+            if (divisorIsNotInPrimesList && thereIsNoRemainder) {
                 primesList.add(divisor.intValue());
                 result = newResult;
                 divisor = 2.0;
             } else {
                 divisor = divisor + 1;
             }
+
         }
         return primesList;
     }
