@@ -49,7 +49,7 @@ public class Main {
                     result = plotter.createDiamondName(n, userName);
                     break;
                 case 'b':
-                    result = plotter.createDiamond(n);
+                    result = plotter.fizzBuzz(n);
                     break;
                 case 'p':
                     result = plotter.createDiamond(n);

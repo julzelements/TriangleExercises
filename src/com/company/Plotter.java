@@ -168,4 +168,29 @@ public class Plotter {
         return listString;
     }
 
+//    public ArrayList<Integer> getPrimes(int n){
+//
+//    }
+
+    public ArrayList<Integer> generate(int n) {
+
+        ArrayList<Integer> primesList = new ArrayList<Integer>();
+        Double divisor = 2.0;
+        Double result = (double)n;
+
+        while (divisor < n) {
+            Double newResult = result / divisor;
+            Double remainder = newResult%1.0;
+
+            if (remainder == 0) {
+                primesList.add(divisor.intValue());
+                result = newResult;
+                divisor = 2.0;
+            } else {
+                divisor = divisor + 1;
+            }
+        }
+        return primesList;
+    }
+
 }

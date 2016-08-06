@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 
 
 /**
@@ -89,4 +90,22 @@ public class PlotterTest {
         assertEquals(fizzBuzz, fizzBuzzTest);
     }
 
+    @Test
+    public void testPrimeFactors() throws Exception {
+        ArrayList<Integer> thirtyPrime = new ArrayList<Integer>();
+        thirtyPrime.add(2);
+        thirtyPrime.add(3);
+        thirtyPrime.add(5);
+        assertEquals(plotter.generate(30),thirtyPrime);
+
+
+
+    }
+    @Test
+    public void testPrimeFourteen() throws Exception {
+        ArrayList<Integer> fourteenPrime = new ArrayList<Integer>();
+        fourteenPrime.add(2);
+        fourteenPrime.add(7);
+        assertEquals(plotter.generate(14), fourteenPrime);
+    }
 }
