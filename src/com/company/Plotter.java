@@ -6,6 +6,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.SynchronousQueue;
 
 
 /**
@@ -176,27 +177,14 @@ public class Plotter {
 
     public ArrayList<Integer> generate(int n) {
 
-        ArrayList<Integer> primesList = new ArrayList<Integer>();
-        Double divisor = 2.0;
-        Double result = (double)n;
-
-        while (divisor < n) {
-            Double newResult = result / divisor;
-            Double remainder = newResult%1.0;
-
-            Boolean divisorIsNotInPrimesList = !(primesList.contains(divisor.intValue()));
-            Boolean thereIsNoRemainder = remainder == 0;
-
-            if (divisorIsNotInPrimesList && thereIsNoRemainder) {
-                primesList.add(divisor.intValue());
-                result = newResult;
-                divisor = 2.0;
-            } else {
-                divisor = divisor + 1;
-            }
-
+        //Initialize Array full of true bool values
+        boolean[] array = new boolean[n-1];
+        for (int i = 2; i < n; i++) {
+            array[i] = true;
         }
-        return primesList;
+
+
+    return new ArrayList<Integer>();
     }
 
 }

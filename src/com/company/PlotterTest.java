@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 
 /**
@@ -115,5 +116,10 @@ public class PlotterTest {
         eightSixtyFourPrime.add(2);
         eightSixtyFourPrime.add(3);
         assertEquals(plotter.generate(864), eightSixtyFourPrime);
+    }
+    @Test
+    public void testArrayOfBoolean() throws Exception {
+        plotter.generate(8);
+        
     }
 }
